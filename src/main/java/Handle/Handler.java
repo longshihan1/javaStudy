@@ -15,8 +15,8 @@ public class Handler {
     }
 
     /**
-     * 发送消息，压入队列
      *
+     *发送消息，压入队列
      * @param msg
      */
     public void sendMessage(Message msg) {
