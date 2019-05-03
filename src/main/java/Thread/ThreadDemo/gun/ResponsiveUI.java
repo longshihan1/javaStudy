@@ -1,7 +1,5 @@
 package Thread.ThreadDemo.gun;
 
-import sun.misc.Unsafe;
-
 import java.io.IOException;
 
 /**
