@@ -22,20 +22,22 @@ import java.util.Map;
  * <p>
  * 如果只找数据是哪个符合的话，第一种方法。
  */
-public class TwoSum {
+public class T001TwoSum {
     static int[] arrr = {11, 7, 11, 8, 2, 16, 15};
     static int tager = 19;
 
     public static void main(String args[]) {
         int[] arr=Arrays.stream(arrr).sorted().toArray();
-        Arrays.stream(twoSum3(arr, tager, 0, arrr.length-1)).forEach(System.out::println);
-        //Arrays.stream(twoSum2(arrr, tager)).forEach(System.out::println);
+//        Arrays.stream(twoSum3(arr, tager, 0, arrr.length-1)).forEach(System.out::println);
+        Arrays.stream(twoSum2(arrr, tager)).forEach(System.out::println);
         // Arrays.stream(twoSum(arrr, tager)).forEach(System.out::println);
     }
 
     /**
      * 递归，将数据依次相减，去map中查找数据。时间复杂度：O(n/2),空间复杂度：O(1),
-     *
+     *  * 利用 HashMap 作为存储，键为目标值减去当前元素值，索引为值，比如 `i = 0` 时，此时首先要判断 `nums[0] = 2` 是否在 map 中，
+     *      * 如果不存在，那么插入键值对 `key = 9 - 2 = 7, value = 0`，之后当 `i = 1` 时，此时判断 `nums[1] = 7` 已存在于 map 中，
+     *      * 那么取出该 `value = 0` 作为第一个返回值，当前 `i` 作为第二个返回值，具体代码如下所示。
      * @param numbers
      * @param target
      * @return
@@ -66,7 +68,7 @@ public class TwoSum {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) {
             if (!map.containsKey(numbers[i]))
-                map.put(target - numbers[i], i + 1);
+                map.put(target - numbers[i], i+1);
             else {
                 res[0] = map.get(numbers[i]);
                 res[1] = i + 1;
@@ -105,4 +107,5 @@ public class TwoSum {
         }
         return current;
     }
+
 }
