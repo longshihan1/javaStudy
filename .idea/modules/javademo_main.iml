@@ -16,8 +16,8 @@
           <option name="apiVersion" value="1.2" />
           <option name="pluginOptions">
             <array>
-              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=annotations.PoKo2" />
-              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=annotations.PoKo2" />
+              <option value="plugin:org.jetbrains.kotlin.allopen:annotation=annotations.PoKo" />
+              <option value="plugin:org.jetbrains.kotlin.noarg:annotation=annotations.PoKo" />
               <option value="plugin:org.jetbrains.kotlin.noarg:invokeInitializers=false" />
             </array>
           </option>
@@ -36,7 +36,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />

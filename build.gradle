@@ -22,10 +22,10 @@ apply plugin: 'kotlin-allopen'
 sourceCompatibility = 1.8
 
 noArg{
-    annotation("annotations.PoKo2")
+    annotation("annotations.PoKo")
 }
 allOpen {
-    annotation("annotations.PoKo2")
+    annotation("annotations.PoKo")
 }
 
 repositories {

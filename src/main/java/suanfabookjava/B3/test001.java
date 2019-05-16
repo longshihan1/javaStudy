@@ -1,4 +1,4 @@
-package suanfabook.B3;
+package suanfabookjava.B3;
 
 import java.util.LinkedList;
 
