@@ -88,6 +88,7 @@ fun quickSort(nums: IntArray,low:Int,high:Int){
             h--
         if (l<h){
             nums[l]=nums[h]
+            println(nums.joinToString())
             l++
         }
         while (l<h&&nums[l]<=temp){
@@ -95,10 +96,12 @@ fun quickSort(nums: IntArray,low:Int,high:Int){
         }
         if (l<h){
             nums[h]=nums[l]
+            println(nums.joinToString())
             h--
         }
     }
     nums[l]=temp
+    println(nums.joinToString())
     if (l-1>low) quickSort(nums,low,l-1)
     if (h+1<high) quickSort(nums,h+1,high)
 

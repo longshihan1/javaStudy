@@ -1,32 +1,44 @@
 package ltttcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class T013Roman {
 
 
     public static void main(String args[]) {
 
+        System.out.println(""+romanToInt("IV"));
     }
 
-    public int romanToInt(String s) {
-        int num = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == 'I') {
-                num += 1;
-            } else if (s.charAt(i) == 'V') {
-                num += 5;
-            } else if (s.charAt(i) == 'X') {
-                num += 10;
-            } else if (s.charAt(i) == 'L') {
-                num += 50;
-            } else if (s.charAt(i) == 'C') {
-                num += 100;
-            } else if (s.charAt(i) == 'D') {
-                num += 500;
-            } else if (s.charAt(i) == 'M') {
-                num += 1000;
-            }
+    private static Map<Character, Integer> map = new HashMap() {
+        {
+            put('I', 1);
+            put('V', 5);
+            put('X', 10);
+            put('L', 50);
+            put('C', 100);
+            put('D', 500);
+            put('M', 1000);
         }
+    };
 
-        return num;
+
+    public static int romanToInt(String s) {
+        int length = s.length();
+        int result = 0;
+        int preVal = 0;
+        for (int i = length - 1; i >= 0; i--) {
+            char key = s.charAt(i);
+            int value = map.get(key);
+            if (value >= preVal) {
+                result += value;
+            } else {
+                result -= value;
+            }
+
+            preVal = value;
+        }
+        return result;
     }
 }

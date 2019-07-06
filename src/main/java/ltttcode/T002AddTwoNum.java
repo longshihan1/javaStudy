@@ -29,7 +29,6 @@ public class T002AddTwoNum {
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode listNode = new ListNode(0);
         ListNode node = new ListNode(0);
         ListNode n1 = l1, n2 = l2, t = node;
         int sum = 0;
